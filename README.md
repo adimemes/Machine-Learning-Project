@@ -47,10 +47,15 @@ Dataset Memiliki beberapa Variabel Colom yaitu:
 Dan pada Notebook saya juga melakukan beberapa visualisasi data yaitu melihat nilai dari Bitcoin pertahunnya membandingkan beberapa Colom dan menunjukan kenaikan pada data tahun,bulan dan minggu.
 
 ## Data Preparation
-Pada data preparitioon saya menggunakan dua cara yaitu melihat apakah pada data terdapat missing value.<br>
-daan di dalam data tidak ada missing value namun di data terdapat type data yang salah yaitu date yang bertipe objek <br>
-karena type itu kurang tepat jasi saya mengganti nya dengan type datetime supaya data lebih jelas dan saat visualisasi data lebih enak dilihat. <br>
-namun awalnya saya juga ingin menggunakan teknik outliner namun karena Bitcoin adalah crypto yang memiliki lonjakan harga naik dan turun jadi saya tidak melakukan teknik itu 
+### Feature Engginering
+Pada tahap ini, dilakukan pemilihan fitur yang akan digunakan dalam model dengan menyaring kolom-kolom yang relevan dari dataset Bitcoin, yaitu:
+**feature**: Kolom-kolom yang memiliki korelasi dengan harga Bitcoin.
+ <br>
+**Target** : Kolom harga penutupan Bitcoin yang dijadikan acuan dalam prediksi.
+
+### Split Dataset
+Pada tahap ini, dilakukan pembagian data menjadi dua bagian yaitu pagian train data dan test data, split data ini dilakukan dengan data pada feature engginering di atas yaitu **feature** dan **target**, <br>
+pada tahap ini data dibagi menjadi 80% data train dan 20% data test dengan kode test_size = 0.2 yang mengartikan data test mengambil 20% saja.
 
 ## Modeling
 menggunakan Random Forest karena menurut saya algoritma ini cocok untuk menangani data yang lumayan kompleks, walaupun pada permaslahaan ini memiliki kekurangan juga yaitu kurang akurat untuk memprediksi jangka panjang dan ada alternatifnya yaitu menggunakan LSTM (Long Short-Term Memory) <br> namun karen saya belum mengetahui mengenai LSTM (Long Short-Term Memory) saya akan menggunakan Random Forest Untuk kasus ini.
