@@ -1,52 +1,67 @@
 # Laporan Proyek Machine Learning - I Kadek Adi Memes Subagia
 
-## Domain Proyek
+# Domain Proyek
  <h1>Analisa Pergerakan Harga Bitcoin</h1>
 
- <p>Bitcoin atau yang biasa kita kenal dengan BTC adalah salah satu mata uang digital atau yang kita kenal dengan cryptocurrency, hal ini menjadi sangat tren dan banyak sekali orang -orang yang mulai menaruh sebagian penghasilannya kedalam cryptocurrency. terutama pada Bitcoin ini karena Bitcoin menduduki Top 1 cryptocurrency dengan harga market tertinggi. bisa dilihat pada website <a href ="https://coinmarketcap.com/id/">Coinmarketcap</a></p> <br>
- Kenapa saya mengambil permasalahan ini adalah karena ini sedang panas - panasnya di indonesia, dimana banyak konten kreator yang sudah mengedukasi kita untuk mulai investasi pada coin inii, tapii kita sebagai individu tidak boleh asal percaya dengan ajakan konten kreator yang mengajak menaruh uang kita pada Bitcoin sebelum kita tahu apa itu Bitcoin?? dan apa aja sihh yang mempengaruhi Bitcoin itu bisa naik atau turun. <br>
+ <p>Bitcoin atau yang biasa kita kenal dengan BTC adalah salah satu mata uang digital atau yang kita kenal dengan cryptocurrency, hal ini menjadi sangat trend dan banyak sekali orang -orang yang mulai menaruh sebagian penghasilannya kedalam cryptocurrency. terutama pada Bitcoin ini karena Bitcoin menduduki Top 1 cryptocurrency dengan harga market tertinggi. bisa dilihat pada website <a href ="https://coinmarketcap.com/id/">Coinmarketcap</a></p> <br>
+ Permasalahan ini menjadi topik yang sedang hangat diperbincangkan di Indonesia. Banyak konten kreator yang mengedukasi masyarakat mengenai investasi dalam mata uang kripto, khususnya Bitcoin. Namun, penting untuk tidak langsung mengikuti ajakan investasi tanpa memahami terlebih dahulu apa itu Bitcoin serta faktor-faktor yang mempengaruhi fluktuasi nilainya. 
+ <br> <br>
+Karena Bitcoin merupakan mata uang digital dengan harga yang tidak dapat diprediksi hanya berdasarkan insting, pemahaman yang mendalam mengenai cryptocurrency menjadi hal yang penting. Dalam hal ini, Bitcoin dipilih sebagai contoh untuk dianalisis lebih lanjut.
+
+
 
  Nahhh karena ini adalah uang digital yang harganya tidak bisa di prediksi dengan hanya insting kita hehehehe, kita perlu adanya pemahaman mengenai cryptocurrency dan pada kesempatan ini saya mencoba mengambil contoh di Bitcoin.
 
 ## Business Understanding
 
-Dari Latar belakang di atas mengenai kenapa saya mengambil contoh ini pada proyek saya, saya mendapati dua problem yaitu:
+Dari Latar belakang di atas dapat diambil dua problem yaitu:
 
 ### Problem
-*   Apa Saja Faktor yang mempengaruhi Kenaikan dan penurunan Harga Bitcoin ?
-*   Apakah Bitcoin Layak di Investasikan Jangka Panjang ?
+* Apa Saja Faktor yang mempengaruhi Kenaikan dan penurunan Harga Bitcoin ?
+* Bagaimana model machine learning dapat digunakan untuk memprediksi harga Bitcoin dalam periode tertentu ( harian, mingguan, atau bulanan) dengan tingkat akurasi yang optimal?
 
 ### Goals
-
-*   Memeriksa faktor yang memiliki Hubungan erat dengan Harga Bitcoin
-*   Membuat sebuah Model yang bisa memberikan prediksi harga Bitcoin satu tahun kedepan, dengan data yang ada.
+* Menganalisis faktor-faktor yang memiliki korelasi erat dengan harga Bitcoin.
+* Membangun model prediksi harga Bitcoin berdasarkan data historis dengan mempertimbangkan faktor-faktor utama yang mempengaruhi harga serta mengevaluasi kinerjanya menggunakan metrik tertentu
 
 ### Solution statements
 
-*   Untuk Permasalahan pertama saya akan membuat sebuah visualisasi data berupa heatmap yang menunjukan korelasi antar setiap fitur dari Bitcoin untuk melihat fitur apa saja yang memiliki korelasi dari harga bitcoin
-*   Permasalahan kedua saya akan membuat sebuah model prediksi menggunakan algoritma Random Forest untuk memprediksi harga dengan menggunakan data yang saya miliki.
+*   Untuk Permasalahan pertama, akan menggunakan visualisasi data berupa heatmap yang menunjukan korelasi antar fitur bitcoin, sehingga dapat didentifikasi faktor - faktor yang mempengaruhi kenaikan dan penurunan harga bitcoin.
+*   Permasalahan kedua, akan dikembangkan menggunakan model prediksi menggunakan algoritma random forest dan dievaluasi dengan Mean Absolute Error (MEA), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), dan R-squared (R²)
 
-## Data Understanding
+# Data Understanding
 
-Untuk menyelesaikan masalah yang sudah saya sampaikan di atas, disini saya akan menggunakan dataset yang disediakan secara grartis pada Kaggle <br>
+Untuk menyelesaikan permasalahan yang telah disampaikan sebelumnya, dataset yang digunakan diperoleh secara gratis dari Kaggle. Dataset dapat diakses melalui tautan berikut:<br>
 [Dataset](https://www.kaggle.com/datasets/sudalairajkumar/cryptocurrencypricehistory/data) <br>
-data yang saya ambil adalah data historical dari Cryptocurrency dalam dataset ini terdapat 23 historical dari Cryptocurrency yang ada, namun karena latar belakang ini mengenai Bitcoin jadi saya hanya mengambil data untuk coin BTC saja.
+Dataset ini berisi data historis dari 23 jenis cryptocurrency. Namun, karena fokus proyek ini adalah Bitcoin (BTC), hanya data terkait BTC yang digunakan untuk analisis.
 
-Dataset Memiliki beberapa Variabel Colom yaitu: 
+### Jumlah Data
+Dataset ini terdiri dari 2.991 baris dan 10 kolom, dengan rincian sebagai berikut:
 
-*   SNo : yang menunjukan nomor dari data
-*   Name : adalah menunjukan nama coin dari Cryptocurrency yaitu Bitcoin
-*   Symbol : yaitu symbol dari nama Bitcoin yaitu BTC
-*   Date : menunjukan tanggal data yang diambil yaitu mulai dari 2013 - 2021
-*   High : kolom ini menunjukan harga tertinggi yang dicapai oleh Bitcoin berdasarkan tanggalnya
-*   Low : ini adalah kebalikan dari Kolom HIgh, pada kolom ini menunjukan harga terendah dari Bitcoin pada Tanggal tersebut
-*   Open : kolom ini merupakan harga pembuka dari koin Bitcoin
-*   CLose : yang merupakan harga penutup dari Bitcoin di tanggal tersebut
-*   Marketcap : kolom ini menunjukan berapa total aset Bitcoin yang berada dalam pasar Crypto
+* SNo: Nomor urut data.
+* Name: Nama cryptocurrency, dalam hal ini Bitcoin.
+* Symbol: Simbol mata uang Bitcoin, yaitu BTC.
+* Date: Tanggal pengambilan data, mencakup rentang waktu dari 2013 hingga 2021.
+* High: Harga tertinggi Bitcoin pada tanggal tertentu.
+* Low: Harga terendah Bitcoin pada tanggal tertentu.
+* Open: Harga pembukaan Bitcoin pada tanggal tersebut.
+* Close: Harga penutupan Bitcoin pada tanggal tersebut.
+* Volume : Jumlah total Bitcoin yang diperdagangkan dalam satu hari
+* Marketcap: Total nilai pasar Bitcoin dalam ekosistem cryptocurrency.
 
-Dan pada Notebook saya juga melakukan beberapa visualisasi data yaitu melihat nilai dari Bitcoin pertahunnya membandingkan beberapa Colom dan menunjukan kenaikan pada data tahun,bulan dan minggu.
+### Kondisi Data
+Pada Pemeriksaan Dataset tidak terdapat dataset yang mengalami missing Value. <br>
+![image](https://github.com/user-attachments/assets/16958b1a-da09-415c-9a81-04ed23c6fd7f)
+<br>
+Namun Pada Dataset terdapat salah satu column yang memiliki keliruan type data <br>
+![image](https://github.com/user-attachments/assets/07ce7161-5d39-44ad-8772-8ec2f09778a7)
 
-## Data Preparation
+
+
+# Data Preparation
+Dalam Data Preparation dilakukan beberapa tahapan seperti Feature Engginering dan Split Data, Namun sesuai dengan Kondisi data di atas, sebelum kita melakukan feature engginering dan split data kita melakukan perbaikan type data pada column Date. <br>
+![image](https://github.com/user-attachments/assets/3b2b22f2-9576-45b8-96ba-80c4ff203d43)
+
 ### Feature Engginering
 Pada tahap ini, dilakukan pemilihan fitur yang akan digunakan dalam model dengan menyaring kolom-kolom yang relevan dari dataset Bitcoin, yaitu:
 **feature**: Kolom-kolom yang memiliki korelasi dengan harga Bitcoin.
@@ -57,13 +72,28 @@ Pada tahap ini, dilakukan pemilihan fitur yang akan digunakan dalam model dengan
 Pada tahap ini, dilakukan pembagian data menjadi dua bagian yaitu pagian train data dan test data, split data ini dilakukan dengan data pada feature engginering di atas yaitu **feature** dan **target**, <br>
 pada tahap ini data dibagi menjadi 80% data train dan 20% data test dengan kode test_size = 0.2 yang mengartikan data test mengambil 20% saja.
 
-## Modeling
-menggunakan Random Forest karena menurut saya algoritma ini cocok untuk menangani data yang lumayan kompleks, walaupun pada permaslahaan ini memiliki kekurangan juga yaitu kurang akurat untuk memprediksi jangka panjang dan ada alternatifnya yaitu menggunakan LSTM (Long Short-Term Memory) <br> namun karen saya belum mengetahui mengenai LSTM (Long Short-Term Memory) saya akan menggunakan Random Forest Untuk kasus ini.
+# Modeling dan Evaluasi
+Untuk menjawab pertanyaan nomor dua, saya menggunakan **algoritma Random Forest.**
+## Random Forest
+Random Forest dipilih karena algoritma ini cocok untuk menangani data yang cukup kompleks.
+### Cara Kerja Random Forest
+Algoritma ini adalah algoritma ensemble learning berbasis decision tree,  Algoritma ini bekerja dengan cara membangun banyak pohon keputusan (decision trees) dan menggabungkan hasilnya untuk meningkatkan akurasi serta mengurangi risiko overfitting.<br>
+karena Random Forest menerapkan metode bagging (agregasi bootstrap) untuk menghasilkan prediksi yang akurat dan stabil. yang dimana dalam algoritma ini mengambil sampel acak dari dataset maka dari itu disebut dengan Random Forest.
+### Kelebihan 
+Kelebihan Dari Algoritma ini adalah cocok untuk dataset yang cukup kompleks karena mampu mengurangi overfiting dengan mengatur Hyperparameter yang ada dalam algoritma ini.
+### Kekurangan 
+Kekurangan Dari Algoritma ini adalah kurang akurat untuk memprediksi jangka panjang dan ada alternatifnya yaitu menggunakan LSTM (Long Short-Term Memory)
 <br> 
-dan pada proses modeling adalah fase yang berulang bagi saya karena saya ada merubah beberapa parameter untuk mendapatkan hasil yang baik secara manual terus menerus atau menggunakan teknik Optimasi Hyperparameter manual
+### Parameter
+Pada File Notebook parameter yang digunakan pada algoritma Random Forest yaitu :
+*   n_estimators dengan value default yaitu 100<br>
+parameter ini merupakan berapa banyak pohon yang akan digunakan, semakin banyak pohon semakin meningkatkan akurasi namun lama saat eksekusi
+*   random_state dengan value none yaitu value bisa diisi berapa saja <br>
+untuk mengatur Memilih subset fitur acak di setiap percabangan pohon agar hasil konsisten
+
 
 ## Evaluation
-pada Tahap ini saya menggunakan 4 metrik regresi yaitu:
+Pada Proyek ini menggunakan empat Metrik evaluasi yaitu:
 * Mean Absolute Error (MAE): MAE adalah rata-rata dari selisih absolut antara nilai aktual dan nilai prediksi dengan Rumus. <br>
 ![image](https://github.com/user-attachments/assets/d522d2ab-d206-4e19-a4f6-319a58c1c111)
 * Mean Squared Error (MSE): MSE adalah rata-rata dari kuadrat selisih antara nilai aktual dan prediksi sangat sensitif pada outlier jadi nilainya besar dan di kuadratkan <br>
@@ -73,5 +103,19 @@ pada Tahap ini saya menggunakan 4 metrik regresi yaitu:
 * R-squared (R²) Score: R² mengukur seberapa baik model regresi menjelaskan variabilitas data <br>
 ![image](https://github.com/user-attachments/assets/6aaae5d7-9089-4561-86d8-50cc41fb6058)
 <br>
-dimana jika nilai R² mendekati nilai 1 itu artinya model berjalan dengan baik.
 
+Metrik ini digunakan karena metrik ini cocok untuk menjadi evaluasi dalam proyek regresion.
+Dalam pelatihan model, didapatkan hasil seperti dibawah ini: 
+<br>
+* Mean Absolute Error (MAE): 53.16653051038279
+* Mean Squared Error (MSE): 14860.572896414964
+* Root Mean Squared Error (RMSE): 121.90394947012571
+* R-squared (R²) Score: 0.9998845303025761 <br>
+
+Untuk metrik
+* Mean Absolute Error (MAE)
+* Mean Squared Error (MSE)
+* Root Mean Squared Error (RMSE)
+
+jika nilai mendekati Nol berarti hasil dari model baik. <br>
+sedangkan untuk nilai R-squared (R²) jika nilai mendekati satu berarti model berjalan dengan baik
