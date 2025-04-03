@@ -69,7 +69,7 @@ Pada tahap ini, dilakukan pembagian data menjadi dua bagian yaitu pagian train d
 pada tahap ini data dibagi menjadi 80% data train dan 20% data test dengan kode test_size = 0.2 yang mengartikan data test mengambil 20% saja.
 
 # Modeling dan Evaluasi
-Untuk menjawab pertanyaan nomor dua, saya menggunakan **algoritma Random Forest.**
+Untuk menjawab pertanyaan nomor dua, disini menggunakan **algoritma Random Forest.**
 ## Random Forest
 Random Forest dipilih karena algoritma ini cocok untuk menangani data yang cukup kompleks.
 ### Cara Kerja Random Forest
