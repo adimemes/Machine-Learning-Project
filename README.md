@@ -4,13 +4,9 @@
  <h1>Analisa Pergerakan Harga Bitcoin</h1>
 
  <p>Bitcoin atau yang biasa kita kenal dengan BTC adalah salah satu mata uang digital atau yang kita kenal dengan cryptocurrency, hal ini menjadi sangat trend dan banyak sekali orang -orang yang mulai menaruh sebagian penghasilannya kedalam cryptocurrency. terutama pada Bitcoin ini karena Bitcoin menduduki Top 1 cryptocurrency dengan harga market tertinggi. bisa dilihat pada website <a href ="https://coinmarketcap.com/id/">Coinmarketcap</a></p> <br>
- Permasalahan ini menjadi topik yang sedang hangat diperbincangkan di Indonesia. Banyak konten kreator yang mengedukasi masyarakat mengenai investasi dalam mata uang kripto, khususnya Bitcoin. Namun, penting untuk tidak langsung mengikuti ajakan investasi tanpa memahami terlebih dahulu apa itu Bitcoin serta faktor-faktor yang mempengaruhi fluktuasi nilainya. 
- <br> <br>
+Permasalahan ini menjadi topik yang sedang hangat diperbincangkan di Indonesia. Banyak konten kreator yang mengedukasi masyarakat mengenai investasi dalam mata uang kripto, khususnya Bitcoin. Namun, penting untuk tidak langsung mengikuti ajakan investasi tanpa memahami terlebih dahulu apa itu Bitcoin serta faktor-faktor yang mempengaruhi fluktuasi nilainya.<br>
+<br>
 Karena Bitcoin merupakan mata uang digital dengan harga yang tidak dapat diprediksi hanya berdasarkan insting, pemahaman yang mendalam mengenai cryptocurrency menjadi hal yang penting. Dalam hal ini, Bitcoin dipilih sebagai contoh untuk dianalisis lebih lanjut.
-
-
-
- Nahhh karena ini adalah uang digital yang harganya tidak bisa di prediksi dengan hanya insting kita hehehehe, kita perlu adanya pemahaman mengenai cryptocurrency dan pada kesempatan ini saya mencoba mengambil contoh di Bitcoin.
 
 ## Business Understanding
 
