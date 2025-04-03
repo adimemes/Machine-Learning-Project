@@ -73,7 +73,7 @@ Untuk menjawab pertanyaan nomor dua, disini menggunakan **algoritma Random Fores
 ## Random Forest
 Random Forest dipilih karena algoritma ini cocok untuk menangani data yang cukup kompleks.
 ### Cara Kerja Random Forest
-![image](https://github.com/user-attachments/assets/91e8b0c2-45fb-420d-918a-9c200240d90b)
+![image](https://github.com/user-attachments/assets/91e8b0c2-45fb-420d-918a-9c200240d90b) <br>
 Algoritma ini adalah algoritma ensemble learning berbasis decision tree,  Algoritma ini bekerja dengan cara membangun banyak pohon keputusan (decision trees) dan menggabungkan hasilnya untuk meningkatkan akurasi serta mengurangi risiko overfitting.<br>
 karena Random Forest menerapkan metode bagging (agregasi bootstrap) untuk menghasilkan prediksi yang akurat dan stabil. yang dimana dalam algoritma ini mengambil sampel acak dari dataset maka dari itu disebut dengan Random Forest.
 ### Kelebihan 
