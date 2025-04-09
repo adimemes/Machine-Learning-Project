@@ -83,9 +83,9 @@ Kekurangan Dari Algoritma ini adalah kurang akurat untuk memprediksi jangka panj
 <br> 
 ### Parameter
 Pada File Notebook parameter yang digunakan pada algoritma Random Forest yaitu :
-*   n_estimators dengan value default yaitu 100<br>
+*   n_estimators dengan value default yaitu 100 dan pada project ini memakai value 150<br>
 parameter ini merupakan berapa banyak pohon yang akan digunakan, semakin banyak pohon semakin meningkatkan akurasi namun lama saat eksekusi
-*   random_state dengan value none yaitu value bisa diisi berapa saja <br>
+*   random_state dengan value none yaitu value bisa diisi berapa saja dan pada project ini memakai valaue 42 <br>
 untuk mengatur Memilih subset fitur acak di setiap percabangan pohon agar hasil konsisten
 
 
@@ -115,4 +115,25 @@ Untuk metrik
 * Root Mean Squared Error (RMSE)
 
 jika nilai mendekati Nol berarti hasil dari model baik. <br>
-sedangkan untuk nilai R-squared (R²) jika nilai mendekati satu berarti model berjalan dengan baik
+sedangkan untuk nilai R-squared (R²) jika nilai mendekati satu berarti model berjalan dengan baik <br>
+
+Pada kesimpulan yang didapatkan dari peoject ini adalah:
+### Apakah Sudah Menjawab Problem Statment :
+
+*   Apa Saja Faktor yang mempengaruhi Kenaikan dan penurunan Harga Bitcoin ?<br>
+Untuk Pertanyaan ini sudah dijawab pada tahap EDA (Explorasi Data Analisi), dimana membuat visualisasi grafik Market Bitcoin dan visualisasi Heatmap untuk melihat fitur yang memiliki korelasi dengan Harga Bitcoin.
+*   Bagaimana model machine learning dapat digunakan untuk memprediksi <br>
+Untuk Pertanyaan ini sudah dijawab pada tahap Modeling data dan mendapatkan score evaluasi yang sudah termasuk Ok, Namun masih belum bisa menjadi acuan yang tepat karena masih banyak faktor eksternal yang mempengaruhi Harga Bitcoin.
+
+### Apakah berhasil mencapai setiap goals yang diharapkan? :
+
+*  Menganalisis faktor-faktor yang memiliki korelasi erat dengan harga Bitcoin. <br>
+Goals ini sudah tercapai dengan mengetahui fitur yang memiliki korelasi dengan harga bitcoin yaitu : kolom Open, Low, High, dan Marketcap
+*   Membangun model prediksi harga Bitcoin berdasarkan data historis untuk memperkirakan tren harga di masa depan. <br>
+Goals ini juga sudah di uji pada tahap testing model dengan mencoba untuk memprediksi harga Bitcoin pada satu tahun kedepan, namun prediksi ini masih belum bisa di percaya 100% karena masih banyak faktor external yang mempengaruhi harga Bitcoin.
+
+### Apakah setiap solusi statement yang kamu rencanakan berdampak? :
+*   Untuk Permasalahan pertama, akan menggunakan visualisasi data berupa heatmap yang menunjukan korelasi antar fitur bitcoin, sehingga dapat didentifikasi faktor - faktor yang mempengaruhi kenaikan dan penurunan harga bitcoin. <br>
+Tahap ini sudah berdampak karena berhasil menemukan korelasi yang berhubungan dengan Harga Bitcoin menggunakan Visualisasi Heatmap.
+*   Permasalahan kedua, akan dikembangkan menggunakan model prediksi menggunakan algoritma random forest dan dievaluasi dengan Mean Absolute Error (MEA), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), dan R-squared (R²) <br>
+Tahapan ini juga karena berhasil untuk memperlihatkan hasil score dari model yang sudah di latih yaitu score dari Mean Absolute Error (MEA), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), dan R-squared (R²)
